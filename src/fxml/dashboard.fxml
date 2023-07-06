@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="main_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="1034.0" styleClass="radius" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventorymanagmentsystem.DashboardController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="512.0">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <children>
+            <BorderPane prefHeight="600.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="30.0" prefWidth="1024.0" style="-fx-background-color: #343741;" styleClass="topraduius" stylesheets="@../css/dashboard.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="53.0" layoutY="8.0" text="Inevntory Managment System - Muhammed El Ibrhaim - 160501309" textFill="WHITE" />
+                        <Button fx:id="minimize" layoutX="977.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" styleClass="close" stylesheets="@../css/dashboard.css" text="-" textFill="WHITE" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="2.0" />
+                        <Button fx:id="close" layoutX="1002.0" layoutY="2.0" mnemonicParsing="false" onAction="#close" styleClass="close" stylesheets="@../css/dashboard.css" text="X" textFill="WHITE" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="2.0" />
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3d0000;" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="570.0" prefWidth="195.0" style="-fx-background-color: #1a9cb2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button fx:id="home_button" layoutX="36.0" layoutY="220.0" mnemonicParsing="false" onAction="#switchframe" prefHeight="26.0" prefWidth="135.0" stylesheets="@../css/dashboard.css" text="Home">
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="logout" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="wearhosue_button" layoutX="36.0" layoutY="322.0" mnemonicParsing="false" onAction="#switchframe" prefHeight="26.0" prefWidth="135.0" stylesheets="@../css/dashboard.css" text="Wearhouses">
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="logout" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="usercontrol_button" layoutX="36.0" layoutY="357.0" mnemonicParsing="false" onAction="#switchframe" prefHeight="28.0" prefWidth="135.0" stylesheets="@../css/dashboard.css" text="Users Control">
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="logout" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="sales_button" layoutX="36.0" layoutY="253.0" mnemonicParsing="false" onAction="#switchframe" prefHeight="26.0" prefWidth="135.0" stylesheets="@../css/dashboard.css" text="Sales">
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="logout" />
+                                 </styleClass>
+                              </Button>
+                              <Label fx:id="username" layoutX="46.0" layoutY="142.0" text="System Admin" textFill="WHITE">
+                                 <font>
+                                    <Font name="OpenSymbol" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="86.5" fill="WHITE" layoutX="100.0" layoutY="178.0" startX="-82.5" stroke="WHITE" />
+                              <Button fx:id="logout_button" layoutX="8.0" layoutY="532.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="78.0" styleClass="logout" stylesheets="@../css/dashboard.css" text="Logout" textFill="WHITE" />
+                              <Button fx:id="products_button" layoutX="36.0" layoutY="287.0" mnemonicParsing="false" onAction="#switchframe" prefHeight="26.0" prefWidth="135.0" stylesheets="@../css/dashboard.css" text="Products">
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="logout" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="570.0" prefWidth="5.0" style="-fx-background-color: #343741;" stylesheets="@../css/dashboard.css" />
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="824.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="home_frame" layoutX="182.0" layoutY="38.0" prefHeight="570.0" prefWidth="823.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="16.0" layoutY="7.0" prefHeight="120.0" prefWidth="808.0" stylesheets="@../css/dashboard.css" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                                 <styleClass>
+                                    <String fx:value="white-form" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="8.0" layoutY="11.0" prefHeight="105.0" prefWidth="255.0" stylesheets="@../css/dashboard.css" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="7.5">
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="radius" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="top-card" />
+                                       </styleClass>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="276.0" layoutY="12.0" prefHeight="105.0" prefWidth="255.0" stylesheets="@../css/dashboard.css" AnchorPane.leftAnchor="276.0" AnchorPane.topAnchor="7.5">
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="radius" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="top-card" />
+                                       </styleClass>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="545.0" layoutY="12.0" prefHeight="105.0" prefWidth="255.0" stylesheets="@../css/dashboard.css" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="7.5">
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="radius" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="top-card" />
+                                       </styleClass>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="8.0" layoutY="136.0" prefHeight="420.0" prefWidth="808.0" stylesheets="@../css/dashboard.css" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                                 <styleClass>
+                                    <String fx:value="white-form" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="47.0" layoutY="7.0" prefHeight="198.0" prefWidth="392.0" stylesheets="@../css/dashboard.css" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0">
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <LineChart layoutX="-103.0" layoutY="-121.0" prefHeight="279.0" prefWidth="397.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </LineChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="504.0" layoutY="71.0" prefHeight="198.0" prefWidth="392.0" stylesheets="@../css/dashboard.css" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <BarChart layoutX="-10.0" layoutY="-101.0" prefHeight="299.0" prefWidth="490.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </BarChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="514.0" layoutY="81.0" prefHeight="198.0" prefWidth="392.0" stylesheets="@../css/dashboard.css" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="8.0">
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <AreaChart layoutX="-67.0" layoutY="-91.0" prefHeight="309.0" prefWidth="433.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </AreaChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="524.0" layoutY="91.0" prefHeight="198.0" prefWidth="392.0" stylesheets="@../css/dashboard.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0">
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <AreaChart layoutX="-11.0" layoutY="-79.0" prefHeight="321.0" prefWidth="489.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </AreaChart>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="sales_frame" layoutX="97.0" layoutY="68.0" prefHeight="570.0" prefWidth="824.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="4.0" layoutY="14.0" prefHeight="570.0" prefWidth="820.0" stylesheets="@../css/dashboard.css" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+                                 <styleClass>
+                                    <String fx:value="white-form" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <Button layoutX="590.0" layoutY="487.0" mnemonicParsing="false" text="Add" />
+                                    <Button layoutX="651.0" layoutY="487.0" mnemonicParsing="false" text="Delet" />
+                                    <Button fx:id="user_" layoutX="703.0" layoutY="487.0" mnemonicParsing="false" text="Update" />
+                                    <Button fx:id="user_search" layoutX="755.0" layoutY="487.0" mnemonicParsing="false" text="Search" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="products_frame" layoutX="147.0" layoutY="114.0" prefHeight="570.0" prefWidth="824.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button fx:id="products_button1" layoutX="250.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchframe" prefHeight="26.0" prefWidth="135.0" stylesheets="@../css/dashboard.css" text="Products">
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="logout" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="wearhouses_frame" layoutX="159.0" layoutY="123.0" prefHeight="570.0" prefWidth="824.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane prefHeight="471.0" prefWidth="808.0" stylesheets="@../css/dashboard.css" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                                 <styleClass>
+                                    <String fx:value="white-form" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="wearhousestable" layoutX="139.0" layoutY="79.0" prefHeight="471.0" prefWidth="808.0" stylesheets="@../css/dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="wearhouses_name_col" prefWidth="75.0" text="Username" />
+                                          <TableColumn fx:id="wearhouses_adress_col" prefWidth="75.0" text="Password" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="75.0" prefWidth="808.0" stylesheets="@../css/dashboard.css" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="487.0">
+                                 <styleClass>
+                                    <String fx:value="white-form" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Button fx:id="wearhouses_search" layoutX="747.0" layoutY="46.0" mnemonicParsing="false" onAction="#searhWearhouse" styleClass="btn" stylesheets="@../css/dashboard.css" text="Search" AnchorPane.bottomAnchor="8.0" />
+                                    <Button fx:id="wearhouses_add" layoutX="677.0" layoutY="8.0" mnemonicParsing="false" onAction="#addWearhouse" prefHeight="26.0" prefWidth="63.0" styleClass="btn" stylesheets="@../css/dashboard.css" text="Add" AnchorPane.topAnchor="8.0" />
+                                    <Button fx:id="wearhouses_delete" layoutX="747.0" layoutY="8.0" mnemonicParsing="false" onAction="#deleteWearhouse" prefHeight="26.0" prefWidth="63.0" styleClass="btn" stylesheets="@../css/dashboard.css" text="Delete" AnchorPane.topAnchor="8.0" />
+                                    <Button fx:id="wearhouses_udpate" layoutX="677.0" layoutY="46.0" mnemonicParsing="false" onAction="#updateWearhouse" styleClass="btn" stylesheets="@../css/dashboard.css" text="Update" AnchorPane.bottomAnchor="8.0" />
+                                    <TextField fx:id="wearhouses_name" layoutX="9.0" layoutY="20.0" promptText="NAME" styleClass="textfield" stylesheets="@../css/dashboard.css" />
+                                    <TextField fx:id="wearhouses_adress" layoutX="176.0" layoutY="21.0" prefHeight="26.0" prefWidth="475.0" promptText="ADRESS" styleClass="textfield" stylesheets="@../css/dashboard.css" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="usercontrol_frame" layoutX="189.0" layoutY="102.0" prefHeight="570.0" prefWidth="824.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="161.0" layoutY="46.0" prefHeight="471.0" prefWidth="808.0" stylesheets="@../css/dashboard.css" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                                 <styleClass>
+                                    <String fx:value="white-form" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="users_table" layoutX="139.0" layoutY="79.0" prefHeight="471.0" prefWidth="808.0" stylesheets="@../css/dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="usertable_username_col" prefWidth="75.0" text="Username" />
+                                        <TableColumn fx:id="usertable_passowrd_col" prefWidth="75.0" text="Password" />
+                                          <TableColumn fx:id="userltable_premission_col" prefWidth="75.0" text="Premision" />
+                                          <TableColumn fx:id="usertable_wearhouseid_col" prefWidth="75.0" text="Wearhouse" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="136.0" layoutY="487.0" prefHeight="75.0" prefWidth="808.0" stylesheets="@../css/dashboard.css" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="487.0">
+                                 <styleClass>
+                                    <String fx:value="white-form" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Button fx:id="user_search" layoutX="747.0" layoutY="46.0" mnemonicParsing="false" onAction="#searchUser" styleClass="btn" stylesheets="@../css/dashboard.css" text="Search" AnchorPane.bottomAnchor="8.0" />
+                                    <Button fx:id="user_add" layoutX="677.0" layoutY="8.0" mnemonicParsing="false" onAction="#addUser" prefHeight="26.0" prefWidth="63.0" styleClass="btn" stylesheets="@../css/dashboard.css" text="Add" AnchorPane.topAnchor="8.0" />
+                                    <Button fx:id="user_delete" layoutX="747.0" layoutY="8.0" mnemonicParsing="false" onAction="#deletUser" prefHeight="26.0" prefWidth="63.0" styleClass="btn" stylesheets="@../css/dashboard.css" text="Delete" AnchorPane.topAnchor="8.0" />
+                                    <Button fx:id="user_update" layoutX="677.0" layoutY="46.0" mnemonicParsing="false" onAction="#updateUser" styleClass="btn" stylesheets="@../css/dashboard.css" text="Update" AnchorPane.bottomAnchor="8.0" />
+                                    <TextField fx:id="usercontorl_username" layoutX="9.0" layoutY="20.0" promptText="USERNAME" styleClass="textfield" stylesheets="@../css/dashboard.css" />
+                                    <TextField fx:id="usercontorl_password" layoutX="176.0" layoutY="21.0" promptText="PASSWORD" styleClass="textfield" stylesheets="@../css/dashboard.css" />
+                                    <TextField fx:id="usercontorl_premission" layoutX="346.0" layoutY="21.0" promptText="PREMISSION" styleClass="textfield" stylesheets="@../css/dashboard.css" />
+                                    <TextField fx:id="usercontorl_wearhouseid" layoutX="512.0" layoutY="21.0" promptText="WEARHOUSEID" styleClass="textfield" stylesheets="@../css/dashboard.css" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+               <bottom>
+                  <AnchorPane prefHeight="5.0" prefWidth="1024.0" style="-fx-background-color: #343741;" styleClass="bottomraduis" stylesheets="@../css/dashboard.css" BorderPane.alignment="CENTER" />
+               </bottom>
+               <right>
+                  <AnchorPane prefHeight="605.0" prefWidth="5.0" style="-fx-background-color: #343741;" BorderPane.alignment="CENTER" />
+               </right>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
